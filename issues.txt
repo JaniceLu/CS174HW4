@@ -1,0 +1,44 @@
+Project Requirements:
+
+  1.  Your Hw4.zip folder has a readme.txt file with all the names and ids for your group.
+  2.  All the web pages you output validate as XHTML 5.
+  3.  Your project is written using namespaces. You only create variables, arrays, objects, define new classes, etc. in the namespace cool_name_for_your_group\hw4 and subnamespaces thereof.
+  4.  The folder structure for your project should be the same as for HW3 and you should use the MVA design pattern. As this project does not involve a database, you will not need a CreateDB.php file. As you will be using packagist.org you need a vendor folder.
+  5.  Even if you are in a team of 1 person, your project should be developed with git. The whole git repository should be contained in your Hw4.zip file you submit. There should be frequent commits in this repository (say diff between commits less than 150 lines of code changed). The contents of the resources folder should be .gitignore'd .
+  6.  You should have a file issues.txt where you split the project into issues. Each issue should have a number by it and an initial description. If you are working in a group of more than one person, the issues should be assigned to team members. Beneath the initial description, should be bullet points for any discussion comments between team members (or between yourself if you are in a group one).
+  7.  The backend of your project is required to be developed in PHP using composer. You should have a composer.json file which requires monolog/monolog
+  8.  The only require or include statement your app itself is allowed to have should occur in the index.php file and should be a require of the Composer generated autoload.php file.
+  9.  The New Image file upload form should only allow .jpg, .png, or .gif files of less than 2MB to be uploaded. This should be checked on the client side before the file is uploaded using Javascript and should be rechecked on the server side. Appropriate messages should be displayed on successful or unsuccessful file upload.
+  10.  On any attempt to upload a file a log message should be written to the YOUR_BASE_DIR/src/resources/jigsaw.log using monolog.
+  11.  Uploaded images should be converted using PHP's Image Manipulation Functions into a 360x360 image saved as YOUR_BASE_DIR/src/resources/active_image.jpg . The Hw4.zip file you submit can have an initial active_image.jpg.
+  12.  When an image is uploaded, the file YOUR_BASE_DIR/src/resources/active_image.txt should be created/overwritten with the serialized contents of a 9 element array containing a random permutation of the numbers 0-8. To generate a random permutation, initialize a nine element array with values 0-8 in order. Then have a for loop on i which goes from 0 to 7 inclusive that swaps the ith element with a randomly chosen element j>i.
+  13.  The puzzle should be organized as nine 120 x 120px fixed width and height styled div tags organized as:
+
+        0 1 2
+        3 4 5
+        6 7 8
+
+       The active_image.jpg should also be thought of as having 120x120px subregions labeled similarly. The background image of div tag tile i should be subregion j of active_image.jpg where j is the value of the ith element of active_image.txt.
+  14.  CSS background-position should be used to draw the appropriate portion of the active_image.jpg into each tile.
+  15.  If no tile is selected, when a user clicks on a tile, Javascript should be used to change the style of its border, making it thicker to indicate it is selected. Clicking on this tile again should make it revert to its unselected state.
+  16.  If a tile is selected and a user clicks on a second tile, then those two tiles should be swapped using appropriate changes to the styles of those two tiles. Also, after this operation no tiles should be selected.
+  17.  When two tiles are swapped, an Ajax message should be sent back to the server to update the file YOUR_BASE_DIR/src/resources/active_image.txt according to this swap.
+  18.  Before sending this Ajax message, in Javascript you should check if the puzzle as been solved. If so, you should have an alert which congratulates the user on solving the puzzle. When the user clicks okay on this alert, the Ajax is sent, and then the page is reloaded.
+  19.  If on the server it is detected the puzzle has been solved, a new permutation is generated and written into active_image.txt.
+  20.  Since this is community jigsaw, we imagine two users may be working on the jigsaw puzzle at the same time, so your code should use file locking on the file active_image.txt so as to avoid corruption if two users try to change it at the same time.
+
+Project Issues:
+
+1. Create issues.txt (Janice Lu)
+    - populate issues.txt with appropriate goals per area of project, can be expanded later to better cater project needs
+        - Janice Lu: 11/5/2020 Created issues.txt, listed the project dependencies at the top for quick reference, created general topics that can be changed later.
+2. Project Dependencies Setup
+    - don't know if this is a thing yet
+3. Project MVA Setup
+    - create skeleton set up for model-view-adapter
+4. CSS Styling of website
+    - style website to ensure that CSS background-position is used to draw the appropriate portion of the active into each tile
+5. Import/Export image capabilities
+    - set up infrastructure for uploading and downloading images for project
+6. Output Validation as XHTML5 (Janice Lu)
+    - use WAVE browser addon and https://validator.w3.org/ to check for accessibility
