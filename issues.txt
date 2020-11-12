@@ -34,8 +34,9 @@ Project Issues:
         - Janice Lu: 11/5/2020 Created issues.txt, listed the project dependencies at the top for quick reference, created general topics that can be changed later.
 2. Project Dependencies Setup
     - don't know if this is a thing yet
-3. Project MVA Setup
+3. Project MVA Setup (Janice Lu)
     - create skeleton set up for model-view-adapter
+        - Janice Lu: 11/11/2020 Created file structure and Landing View MVA model for future usage. Also got Landing page working to a minimal degree.
 4. CSS Styling of website
     - style website to ensure that CSS background-position is used to draw the appropriate portion of the active into each tile
 5. Import/Export image capabilities

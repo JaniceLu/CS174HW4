@@ -1,5 +1,12 @@
 {
     "require": {
         "monolog/monolog": "^2.1"
+    },
+    "autoload": {
+      "psr-4":{
+        "Views\\":"src/views/",
+        "Controllers\\":"src/controllers/",
+        "Views\\Layouts\\":"src/views/layouts/"
+      }
     }
 }
