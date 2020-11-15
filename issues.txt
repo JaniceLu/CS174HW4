@@ -43,3 +43,8 @@ Project Issues:
     - set up infrastructure for uploading and downloading images for project
 6. Output Validation as XHTML5 (Janice Lu)
     - use WAVE browser addon and https://validator.w3.org/ to check for accessibility
+7. Title currently says "Movie Reviews" (Chris Douglas)
+    - changing it to Community Jigsaw in header.php
+8. Change namespaces to comply with the format in requirement 3.
+    - all namespaces need to be in the format BatmansParentsLive\hw4\.... For example if it's in the controller folder then the namespace needs to be BatmansParentsLive\hw4\src\controllers
+        - Chris Douglas: 11/14/2020 I think we do that in the composer.json file? I dont know how to fix this without breaking everything yet

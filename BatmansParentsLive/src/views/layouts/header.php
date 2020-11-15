@@ -8,7 +8,7 @@ class Header
             <html lang=\"en\">
               <head>
                 <meta charset=\"UTF-8\">
-                <title>Movie Reviews</title>
+                <title>Community Jigsaw</title>
                 <link rel=\"stylesheet\" href=\"./src/styles/stylesheet.css\">
               </head>
               <body>
