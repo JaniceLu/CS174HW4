@@ -56,4 +56,24 @@ class ImageTools{
     //exit
     echo True;
   }
+
+
+  function getOrder()
+  {
+    $fp = fopen("./src/resources/active_image.txt", 'r');
+    while (!flock($fp, LOCK_SH)) //could result in a deadlock maybe???
+    {
+      //wait until we can acquire the lock
+      continue;
+    }
+
+    //read file into array
+    $arr = [];
+    for($f = 0; $f < 9; $f++)
+    {
+      $arr[$f] = fgetc($fp);
+    }
+    flock($fp, LOCK_UN);
+    return $arr;
+  }
 }
