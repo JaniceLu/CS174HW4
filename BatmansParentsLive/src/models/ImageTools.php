@@ -34,8 +34,6 @@ class ImageTools{
     {
       $arr[$f] = fgetc($fp);
     }
-    print_r($arr);
-    echo gettype($arr[0]);
     //swap items in array at position i and position j
     $k = $arr[$i];
     $arr[$i] = $arr[$j];
@@ -49,7 +47,6 @@ class ImageTools{
     {
       $writeMe = $writeMe . $arr[$f];
     }
-    echo $writeMe;
     fseek($fp, 0);
     fwrite($fp, $writeMe);
     //unlock files
