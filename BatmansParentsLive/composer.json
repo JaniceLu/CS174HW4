@@ -6,7 +6,8 @@
       "psr-4":{
         "Views\\":"src/views/",
         "Controllers\\":"src/controllers/",
-        "Views\\Layouts\\":"src/views/layouts/"
+        "Views\\Layouts\\":"src/views/layouts/",
+        "Models\\":"src/models/"
       }
     }
 }
