@@ -2,9 +2,9 @@
 namespace BatmansParentsLive;
 require("./vendor/autoload.php");
 
-use Controllers\LandingAdapter as LandingAdapter;
-use Controllers\ImageAdapter as ImageAdapter;
-use Controllers\SwapAdapter as SwapAdapter;
+use BatmansParentsLive\hw4\Controllers\LandingAdapter as LandingAdapter;
+use BatmansParentsLive\hw4\Controllers\ImageAdapter as ImageAdapter;
+use BatmansParentsLive\hw4\Controllers\SwapAdapter as SwapAdapter;
 
 //use Models\ImageTools as ImageTools;
 

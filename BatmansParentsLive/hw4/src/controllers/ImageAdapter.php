@@ -1,8 +1,8 @@
 <?php
 
-namespace Controllers;
-use Views\ImageView as ImageView;
-use Models\ImageTools as ImageTools;
+namespace BatmansParentsLive\hw4\Controllers;
+use BatmansParentsLive\hw4\Views\ImageView as ImageView;
+use BatmansParentsLive\hw4\Models\ImageTools as ImageTools;
 
 class ImageAdapter extends Adapter
 {

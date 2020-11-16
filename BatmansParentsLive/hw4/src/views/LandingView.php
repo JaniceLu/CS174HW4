@@ -1,7 +1,7 @@
 <?php
-namespace Views;
+namespace BatmansParentsLive\hw4\Views;
 
-use Views\Layouts\header as header;
+use BatmansParentsLive\hw4\Layouts\Header as header;
 
 class LandingView extends View
 {

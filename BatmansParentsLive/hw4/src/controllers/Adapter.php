@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers;
+namespace BatmansParentsLive\hw4\Controllers;
 
 abstract class Adapter
 {

@@ -1,7 +1,7 @@
 <?php
 
-namespace Controllers;
-use Models\ImageTools as ImageTools;
+namespace BatmansParentsLive\hw4\Controllers;
+use BatmansParentsLive\hw4\Models\ImageTools as ImageTools;
 
 class SwapAdapter extends Adapter
 {
