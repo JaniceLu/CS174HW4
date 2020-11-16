@@ -18,7 +18,8 @@ class ImageTools{
     //lock down file
     if( is_null($i) || is_null($j) || $i == $j || $i < 0 || $j < 0 || $i > 8 || $j > 8)
     {
-      return False; // we cant swap if i or j are null and there isn't a point to swap anything when they're ==
+      echo False; // we cant swap if i or j are null and there isn't a point to swap anything when they're ==
+      return;
     }
     $fp = fopen("./src/resources/active_image.txt", 'r+');
     while (!flock($fp, LOCK_EX)) //could result in a deadlock maybe???
@@ -53,6 +54,6 @@ class ImageTools{
     flock($fp, LOCK_UN);
 
     //exit
-    return True;
+    echo True;
   }
 }
