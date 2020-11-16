@@ -4,6 +4,7 @@ require("./vendor/autoload.php");
 
 use Controllers\LandingAdapter as LandingAdapter;
 use Controllers\ImageAdapter as ImageAdapter;
+use Controllers\SwapAdapter as SwapAdapter;
 
 //use Models\ImageTools as ImageTools;
 
@@ -18,6 +19,10 @@ if ($controller == "LandingView"){
 else if ($controller == "image")
 {
   $controller = new ImageAdapter();
+}
+else if ($controller == "swap")
+{
+  $controller = new SwapAdapter();
 }
 
 $controller->run();
