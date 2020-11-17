@@ -9,7 +9,7 @@ class Header
               <head>
                 <meta charset=\"UTF-8\">
                 <title>Community Jigsaw</title>
-                <link rel=\"stylesheet\" href=\"./src/styles/stylesheet.css\">
+                <link rel=\"stylesheet\" href=\"./hw4/src/styles/stylesheet.css\">
               </head>
               <body>
                 <main>
