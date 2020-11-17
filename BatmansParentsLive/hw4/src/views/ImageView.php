@@ -1,5 +1,5 @@
 <?php
-namespace Views;
+namespace BatmansParentsLive\hw4\Views;
 
 class ImageView extends View
 {

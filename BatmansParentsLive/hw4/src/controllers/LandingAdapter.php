@@ -1,8 +1,8 @@
 <?php
 
-namespace Controllers;
-use Views\LandingView as LandingView;
-use Models\ImageTools as ImageTools;
+namespace BatmansParentsLive\hw4\Controllers;
+use BatmansParentsLive\hw4\Views\LandingView as LandingView;
+use BatmansParentsLive\hw4\Models\ImageTools as ImageTools;
 
 class LandingAdapter extends Adapter
 {

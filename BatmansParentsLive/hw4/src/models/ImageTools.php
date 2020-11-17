@@ -1,12 +1,12 @@
 <?php
 
-namespace Models;
+namespace BatmansParentsLive\hw4\Models;
 
 class ImageTools{
   function LoadJpeg($i)
   {
       /* Attempt to open */
-      $im = imagecreatefromjpeg("./src/resources/active_image.jpg");
+      $im = imagecreatefromjpeg("./hw4/src/resources/active_image.jpg");
       //compute x and y using i.
       //x is just 120 * i %3
       //y is just the integer division of i and 3..... i'm hella tired and it took me waaaay too long to figure that out :(
@@ -21,7 +21,7 @@ class ImageTools{
       echo False; // we cant swap if i or j are null and there isn't a point to swap anything when they're ==
       return;
     }
-    $fp = fopen("./src/resources/active_image.txt", 'r+');
+    $fp = fopen("./hw4/src/resources/active_image.txt", 'r+');
     while (!flock($fp, LOCK_EX)) //could result in a deadlock maybe???
     {
       //wait until we can acquire the lock
@@ -60,7 +60,7 @@ class ImageTools{
 
   function getOrder()
   {
-    $fp = fopen("./src/resources/active_image.txt", 'r');
+    $fp = fopen("./hw4/src/resources/active_image.txt", 'r');
     while (!flock($fp, LOCK_SH)) //could result in a deadlock maybe???
     {
       //wait until we can acquire the lock
