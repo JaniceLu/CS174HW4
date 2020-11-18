@@ -53,6 +53,6 @@ Project Issues:
 9. Make function to deal with swapping tiles (Chris Douglas)
     - make a functionality called swap that will take two unique integers between 0-8 (inclusive) and swap their relative
         - Chris Douglas: 11/15/2020 So I've been thinking about how we can write the placement of the tiles to the active_image.txt file. My idea is just to store it as a string like "567148032". when we lock the file to swap i and j we can just read in a single string and iterate over the characters
-10. Reorganize folders to follow format: "groupname/hw4/src"
-    - Must follow this format for namespaces
-        -
+10. Change the method by which we display images to background-image
+    - previously, we used an imageAdapter and populated the home screen via individual div tags rather than using the background-image property
+        - Janice Lu: 11/17/2020 made temporary change to the way the images are grabbed...not functioning yet though
