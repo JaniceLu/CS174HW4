@@ -51,3 +51,5 @@ Project Issues:
 9. Make function to deal with swapping tiles (Chris Douglas)
     - make a functionality called swap that will take two unique integers between 0-8 (inclusive) and swap their relative
         - Chris Douglas: 11/15/2020 So I've been thinking about how we can write the placement of the tiles to the active_image.txt file. My idea is just to store it as a string like "567148032". when we lock the file to swap i and j we can just read in a single string and iterate over the characters
+10. Change how we get each tile (Chris Douglas)
+    - change what tile is returned by a call to ./index.php?c=index&i=[TILE HERE]. 0 would return the actual first tile. Now it returns the scrambled tile.

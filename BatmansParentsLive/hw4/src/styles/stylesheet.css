@@ -1,52 +1,84 @@
 div.puzzle{
   position: absolute;
+  background-repeat: no-repeat;
   left: 20px;
   height: 360px;
   width: 360px;
+  border-style: none;
+}
+div.outline{
+  outline: 5px solid black;
+  outline-offset: -5px;
 }
 div.puzzle0{
   position: absolute;
-  background-image:
+  background-image: url("../../../index.php?c=image&i=0");
   left: 0px;
   top: 0px;
+  height: 120px;
+  width: 120px;
 }
 div.puzzle1{
   position: absolute;
+  background-image: url("../../../index.php?c=image&i=1");
+  height: 120px;
+  width: 120px;
   left: 120px;
   top: 0px;
 }
 div.puzzle2{
   position: absolute;
+  background-image: url("../../../index.php?c=image&i=2");
+  height: 120px;
+  width: 120px;
   left: 240px;
   top: 0px;
 }
 div.puzzle3{
   position: absolute;
+  background-image: url("../../../index.php?c=image&i=3");
+  height: 120px;
+  width: 120px;
   left: 0px;
   top: 120px;
 }
 div.puzzle4{
   position: absolute;
+  background-image: url("../../../index.php?c=image&i=4");
+  height: 120px;
+  width: 120px;
   left: 120px;
   top: 120px;
 }
 div.puzzle5{
   position: absolute;
+  background-image: url("../../../index.php?c=image&i=5");
+  height: 120px;
+  width: 120px;
   left: 240px;
   top: 120px;
 }
 div.puzzle6{
   position: absolute;
+  background-image: url("../../../index.php?c=image&i=6");
+  height: 120px;
+  width: 120px;
   left: 0px;
   top: 240px;
 }
 div.puzzle7{
   position: absolute;
+  background-image: url("../../../index.php?c=image&i=7");
+  height: 120px;
+  width: 120px;
   left: 120px;
   top: 240px;
 }
 div.puzzle8{
   position: absolute;
+  background-image: url("../../../index.php?c=image&i=8");
+  height: 120px;
+  width: 120px;
   left: 240px;
   top: 240px;
 }
