@@ -7,7 +7,7 @@ class ImageTools{
   {
       /* Attempt to open */
       $im = imagecreatefromjpeg("./hw4/src/resources/active_image.jpg");
-      $fp = fopen("./hw4/src/resources/active_image.txt", 'r+');
+      /*$fp = fopen("./hw4/src/resources/active_image.txt", 'r+');
       while (!flock($fp, LOCK_SH)) //could result in a deadlock maybe???
       {
         //wait until we can acquire the lock
@@ -17,11 +17,13 @@ class ImageTools{
       $order = fgets($fp);
       $index = substr($order, $i, 1);
       $i = intval($index);
-
+      flock($fp, LOCK_UN);*/
+      
       //compute x and y using i.
       //x is just 120 * i %3
       //y is just the integer division of i and 3..... i'm hella tired and it took me waaaay too long to figure that out :(
       // imagecrop($im, ['x'=> 120*($i%3), 'y' => 120*intdiv($i,3), 'width' => 120, 'height' => 120])
+
       return imagejpeg(imagecrop($im, ['x'=> 120*($i%3), 'y' => 120*intdiv($i,3), 'width' => 120, 'height' => 120]));
   }
 
@@ -66,7 +68,7 @@ class ImageTools{
     flock($fp, LOCK_UN);
 
     //exit
-    echo True;
+    return True;
   }
 
 

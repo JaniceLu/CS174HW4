@@ -5,6 +5,7 @@ require("./vendor/autoload.php");
 use BatmansParentsLive\hw4\Controllers\LandingAdapter as LandingAdapter;
 use BatmansParentsLive\hw4\Controllers\ImageAdapter as ImageAdapter;
 use BatmansParentsLive\hw4\Controllers\SwapAdapter as SwapAdapter;
+use BatmansParentsLive\hw4\Controllers\OrderAdapter as OrderAdapter;
 
 //use Models\ImageTools as ImageTools;
 
@@ -23,6 +24,10 @@ else if ($controller == "image")
 else if ($controller == "swap")
 {
   $controller = new SwapAdapter();
+}
+else if ($controller = "order")
+{
+  $controller = new OrderAdapter();
 }
 
 $controller->run();
