@@ -73,30 +73,33 @@ div.puzzleLoc8{
   left: 240px;
   top: 240px;
 }
-div.puzzle0{
+div.puzzlePic{
     background-image: url("../../../index.php?c=image&i=0");
 }
-div.puzzle1{
-    background-image: url("../../../index.php?c=image&i=1");
+div.piece0{
+    background-position: 0px 0px;
 }
-div.puzzle2{
-    background-image: url("../../../index.php?c=image&i=2");
+div.piece1{
+    background-position: -120px 0px;
 }
-div.puzzle3{
-    background-image: url("../../../index.php?c=image&i=3");
+div.piece2{
+    background-position: -240px 0px;
 }
-div.puzzle4{
-    background-image: url("../../../index.php?c=image&i=4");
+div.piece3{
+    background-position: 0px -120px;
 }
-div.puzzle5{
-    background-image: url("../../../index.php?c=image&i=5");
+div.piece4{
+    background-position: -120px -120px;
 }
-div.puzzle6{
-    background-image: url("../../../index.php?c=image&i=6");
+div.piece5{
+    background-position: -240px -120px;
 }
-div.puzzle7{
-    background-image: url("../../../index.php?c=image&i=7");
+div.piece6{
+    background-position: 0px -240px;
 }
-div.puzzle8{
-    background-image: url("../../../index.php?c=image&i=8");
+div.piece7{
+    background-position: -120px -240px;
+}
+div.piece8{
+    background-position: -240px -240px;
 }
