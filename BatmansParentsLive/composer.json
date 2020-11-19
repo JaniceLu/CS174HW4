@@ -7,6 +7,7 @@
         "BatmansParentsLive\\hw4\\Views\\":"hw4/src/views/",
         "BatmansParentsLive\\hw4\\Controllers\\":"hw4/src/controllers/",
         "BatmansParentsLive\\hw4\\Layouts\\":"hw4/src/views/layouts/",
+        "BatmansParentsLive\\hw4\\Helpers\\":"hw4/src/views/helpers/",
         "BatmansParentsLive\\hw4\\Models\\":"hw4/src/models/"
       }
     }

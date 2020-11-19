@@ -10,7 +10,7 @@ class SwapAdapter extends Adapter
     private $j;
 
     function run(){
-      $this->model->swap($this->i, $this->j);
+      echo $this->model->swap($this->i, $this->j);
     }
 
     function __construct()
