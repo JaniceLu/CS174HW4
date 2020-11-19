@@ -16,15 +16,15 @@ class LandingView extends View
         <label for="submitImage"><input type="submit" value="Upload" name="submit"></label>
       </form> <br>
       <div class="puzzle" id="puzzle">
-        <div class='puzzle puzzleLoc0 puzzlePic peice0' id='0' onclick="swap(this.id)"></div>
-        <div class='puzzle puzzleLoc1 puzzlePic peice1' id='1' onclick="swap(this.id)"></div>
-        <div class='puzzle puzzleLoc2 puzzlePic peice1' id='2' onclick="swap(this.id)"></div>
-        <div class='puzzle puzzleLoc3 puzzlePic peice1' id='3' onclick="swap(this.id)"></div>
-        <div class='puzzle puzzleLoc4 puzzlePic peice1' id='4' onclick="swap(this.id)"></div>
-        <div class='puzzle puzzleLoc5 puzzlePic peice1' id='5' onclick="swap(this.id)"></div>
-        <div class='puzzle puzzleLoc6 puzzlePic peice1' id='6' onclick="swap(this.id)"></div>
-        <div class='puzzle puzzleLoc7 puzzlePic peice1' id='7' onclick="swap(this.id)"></div>
-        <div class='puzzle puzzleLoc8 puzzlePic peice1' id='8' onclick="swap(this.id)"></div>
+        <div class='puzzle puzzleLoc0' id='0' onclick="swap(this.id)"></div>
+        <div class='puzzle puzzleLoc1' id='1' onclick="swap(this.id)"></div>
+        <div class='puzzle puzzleLoc2' id='2' onclick="swap(this.id)"></div>
+        <div class='puzzle puzzleLoc3' id='3' onclick="swap(this.id)"></div>
+        <div class='puzzle puzzleLoc4' id='4' onclick="swap(this.id)"></div>
+        <div class='puzzle puzzleLoc5' id='5' onclick="swap(this.id)"></div>
+        <div class='puzzle puzzleLoc6' id='6' onclick="swap(this.id)"></div>
+        <div class='puzzle puzzleLoc7' id='7' onclick="swap(this.id)"></div>
+        <div class='puzzle puzzleLoc8' id='8' onclick="swap(this.id)"></div>
       </div>
       <script type="text/javascript">
         function swap(docID){
@@ -62,8 +62,16 @@ class LandingView extends View
             }
         }
 
-        window.onload = function puzzleify(){
-          var order = "567148032";
+        function puzzleify(){
+          var order = "012345678";
+          request = new XMLHttpRequest();
+          request.onreadystatechange = function()
+          {
+            console.log(request.requestText)
+            order = request.responseText;
+          }
+          request.open("GET", "./index.php?c=order", false);
+          request.send();
           for (var i = 0; i < order.length; i++)
           {
             var outline = ""
@@ -75,6 +83,7 @@ class LandingView extends View
             document.getElementById(i.toString()).className = 'puzzle puzzleLoc' + i + " puzzlePic" + " piece"+c + outline;
           }
         }
+        window.onload = puzzleify();
       </script>
     <?php
   }
