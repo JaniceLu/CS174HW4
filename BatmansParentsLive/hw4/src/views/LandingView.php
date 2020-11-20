@@ -29,7 +29,19 @@ class LandingView extends View
       <script type="text/javascript">
         function swap(docID){
             //see if puzzle is solved
-
+            var order = "012345678";
+            request = new XMLHttpRequest();
+            request.onreadystatechange = function()
+            {
+              order = request.responseText;
+            }
+            request.open("GET", "./index.php?c=order", false);
+            request.send();
+            if (order == "012345678")
+            {
+              alert("congrats! Now do it again");
+              puzzleify();
+            }
             // check to see if any tiles have the outline class
             var i;
             var selected = false;
@@ -52,7 +64,15 @@ class LandingView extends View
                 document.getElementById(i.toString()).classList.remove("outline");
               }
               else { // if not the same then these are the two we need to swap
-
+                request = new XMLHttpRequest();
+                solved = 0;
+                request.onreadystatechange = function()
+                {
+                  solved = request.responseText;
+                }
+                request.open("GET", "./index.php?c=swap&i="+i+"&j="+docID, false);
+                request.send();
+                puzzleify();
               }
 
             }
@@ -67,7 +87,6 @@ class LandingView extends View
           request = new XMLHttpRequest();
           request.onreadystatechange = function()
           {
-            console.log(request.requestText)
             order = request.responseText;
           }
           request.open("GET", "./index.php?c=order", false);
