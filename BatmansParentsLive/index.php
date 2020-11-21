@@ -6,6 +6,7 @@ use BatmansParentsLive\hw4\Controllers\LandingAdapter as LandingAdapter;
 use BatmansParentsLive\hw4\Controllers\ImageAdapter as ImageAdapter;
 use BatmansParentsLive\hw4\Controllers\SwapAdapter as SwapAdapter;
 use BatmansParentsLive\hw4\Controllers\OrderAdapter as OrderAdapter;
+use BatmansParentsLive\hw4\Controllers\UploadAdapter as UploadAdapter; 
 
 //use Models\ImageTools as ImageTools;
 
@@ -14,8 +15,13 @@ if(!empty($_GET['c'])){
   $controller = $_GET['c'];
 }
 
-if ($controller == "LandingView"){
+if ($controller == "LandingView")
+{
   $controller = new LandingAdapter();
+}
+else if ($controller == "addImage")
+{
+  $controller = new UploadAdapter();
 }
 else if ($controller == "image")
 {

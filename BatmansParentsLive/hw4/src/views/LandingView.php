@@ -12,8 +12,9 @@ class LandingView extends View
     $header->render();
     ?>
       <form class="addimage" action="./index.php?c=addImage" method="post" enctype="multipart/form-data">
-        <label for="imageToUpload">New Image: <input type="text" id="imageToUpload"></label>
-        <label for="submitImage"><input type="submit" value="Upload" name="submit"></label>
+        <label for="filename">New Image: <input type="text" id="filename" onclick="browse()"/></label>
+        <label class="upload"><input style="display: none;" id="filelocation" type="file"  onchange="update()"></label>
+        <label for="submitImage"><input type="button" value="Upload" name="submit" onclick="validateFile()"></label>
       </form> <br>
       <div class="puzzle" id="puzzle">
         <div class='puzzle puzzleLoc0' id='0' onclick="swap(this.id)"></div>
@@ -27,6 +28,42 @@ class LandingView extends View
         <div class='puzzle puzzleLoc8' id='8' onclick="swap(this.id)"></div>
       </div>
       <script type="text/javascript">
+
+        function update(){
+          var uploadFile = document.getElementById("filename");
+          var input = document.getElementById("filelocation");
+          uploadFile.value = input.value;
+        }
+
+        function validateFile(){
+          var input = document.getElementById("filelocation");
+
+          var uploadFilePath = input.value;
+          var fileExt = uploadFilePath.split('.').pop();
+          var returnMsg = "";
+          var returnStatus = 1;
+          if(!fileExt.match(/(png|jpg|gif)$/))
+          {
+              returnStatus = 0;
+              alert("Not an image. Upload failed.");
+          }
+          var uploadFileSize = input.files[0].size / 1024 / 1204;
+          if(uploadFileSize > 2)
+          {
+            returnStatus = 0;
+            alert('File size is larger than 2 MB. Upload Failed.');
+          }
+          if(returnStatus)
+          {
+            document.form.submit();
+          }
+        }
+
+        function browse(){
+          var fileInput = document.getElementById("filelocation");
+          fileInput.click();
+        }
+
         function swap(docID){
             //see if puzzle is solved
             var order = "012345678";

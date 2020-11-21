@@ -33,15 +33,17 @@ Project Issues:
     - populate issues.txt with appropriate goals per area of project, can be expanded later to better cater project needs
         - Janice Lu: 11/5/2020 Created issues.txt, listed the project dependencies at the top for quick reference, created general topics that can be changed later.
 2. Project Dependencies Setup
-    - don't know if this is a thing yet
+    - add Monolog functionality to the Project
 3. Project MVA Setup (Janice Lu)
     - create skeleton set up for model-view-adapter
         - Janice Lu: 11/11/2020 Created file structure and Landing View MVA model for future usage. Also got Landing page working to a minimal degree.
 4. CSS Styling of website (Janice Lu and Chris Douglas)
     - style website to ensure that CSS background-position is used to draw the appropriate portion of the active into each tile
         - Janice Lu 11/17/2020 Added temporary solution for the jigsaw puzzle styling but needs to be changed to match the requirements of populating via background-position and background-image.
-5. Import/Export image capabilities
+        - Janice Lu 11/20/2020 My labor of love on the upload form to match the description in the homework. Update readme later to specify how to use.
+5. Import/Export image capabilities (Janice Lu)
     - set up infrastructure for uploading and downloading images for project
+        - Janice Lu: 11/20/2020 Added javascript validation capabilities for image upload, also added UploadAdapter.
 6. Output Validation as XHTML5 (Janice Lu)
     - use WAVE browser addon and https://validator.w3.org/ to check for accessibility
 7. Title currently says "Movie Reviews" (Chris Douglas)
@@ -53,6 +55,6 @@ Project Issues:
 9. Make function to deal with swapping tiles (Chris Douglas)
     - make a functionality called swap that will take two unique integers between 0-8 (inclusive) and swap their relative
         - Chris Douglas: 11/15/2020 So I've been thinking about how we can write the placement of the tiles to the active_image.txt file. My idea is just to store it as a string like "567148032". when we lock the file to swap i and j we can just read in a single string and iterate over the characters
-10. Change the method by which we display images to background-image
+10. Change the method by which we display images to background-image (Janice Lu, Chris Douglas)
     - previously, we used an imageAdapter and populated the home screen via individual div tags rather than using the background-image property
         - Janice Lu: 11/17/2020 made temporary change to the way the images are grabbed...not functioning yet though
