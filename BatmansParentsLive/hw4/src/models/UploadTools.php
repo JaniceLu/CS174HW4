@@ -4,31 +4,26 @@ namespace BatmansParentsLive\hw4\Models;
 
 class UploadTools
 {
-  function uploadImage($image)
+  function checkImage($logger, $image)
   {
-    $directory = "/hw4/src/resources/";
+    $directory = "./hw4/src/resources/";
     $file = $directory . basename($_FILES["imageToUpload"]["name"]);
     $fileType = strtolower(pathinfo($file,PATHINFO_EXTENSION));
     $uploadPass = 1;
     $returnMsg = "";
-    if (isset($_POST("submit")))
+    if (isset($_POST["submit"]))
     {
-      $checkSize = getimagesize($_FILES["imageToUpload"]["tmp_name"]);
-      if($checkSize !== false) // limit to only images
-      {
-        $returnMsg = "Not an image. Upload failed.";
-        $uploadPass = 0;
-      }
       if($_FILES["imageToUpload"]["size"] > 2000000) // limit to 2MB
       {
-        $returnMsg = "Image too large. Upload failed.";
-        $uploadPass = 0;
+        $logger->error("File exceeds 2MB limit.");
+        return 0;
       }
-      if($fileType != "jpg" && $fileType != "png" && $fileType != "gif")
+      if($fileType != "jpg" && $fileType != "png" && $fileType != "gif") // limit to jpg, png, gif
       {
-        $returnMsg = "Not the correct format. Must be .jpg, .png, .gif. Upload failed.";
-        $uploadPass = 0;
+        $logger->error("File extension \"" . $fileType . "\" is not a supported format.");
+        return 0;
       }
+      return 1;
     }
   }
 }

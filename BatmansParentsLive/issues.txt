@@ -32,8 +32,9 @@ Project Issues:
 1. Create issues.txt (Janice Lu)
     - populate issues.txt with appropriate goals per area of project, can be expanded later to better cater project needs
         - Janice Lu: 11/5/2020 Created issues.txt, listed the project dependencies at the top for quick reference, created general topics that can be changed later.
-2. Project Dependencies Setup
+2. Project Dependencies Setup (Janice Lu)
     - add Monolog functionality to the Project
+        - Janice Lu: 11/21/2020 Set up Monolog to log attempts to upload as well as server side validation errors (if it ever gets there). Comment out validation function in LandingView to check.
 3. Project MVA Setup (Janice Lu)
     - create skeleton set up for model-view-adapter
         - Janice Lu: 11/11/2020 Created file structure and Landing View MVA model for future usage. Also got Landing page working to a minimal degree.
@@ -43,7 +44,8 @@ Project Issues:
         - Janice Lu 11/20/2020 My labor of love on the upload form to match the description in the homework. Update readme later to specify how to use.
 5. Import/Export image capabilities (Janice Lu)
     - set up infrastructure for uploading and downloading images for project
-        - Janice Lu: 11/20/2020 Added javascript validation capabilities for image upload, also added UploadAdapter.
+        - Janice Lu: 11/20/2020 Added JavaScript validation capabilities for image upload, also added UploadAdapter.
+        - Janice Lu: 11/21/2020 Added server side validation capabilities in the case that JavaScript validation fails.
 6. Output Validation as XHTML5 (Janice Lu)
     - use WAVE browser addon and https://validator.w3.org/ to check for accessibility
 7. Title currently says "Movie Reviews" (Chris Douglas)
@@ -58,3 +60,6 @@ Project Issues:
 10. Change the method by which we display images to background-image (Janice Lu, Chris Douglas)
     - previously, we used an imageAdapter and populated the home screen via individual div tags rather than using the background-image property
         - Janice Lu: 11/17/2020 made temporary change to the way the images are grabbed...not functioning yet though
+11. Styling needs to be fixed on the upload form
+    - Currently, there is an in-line styling, but should be put in stylesheet.
+        - Janice Lu: 11/21/2020 I couldn't figure out what was wrong with the stylesheet :(
