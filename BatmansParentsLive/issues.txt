@@ -46,6 +46,7 @@ Project Issues:
     - set up infrastructure for uploading and downloading images for project
         - Janice Lu: 11/20/2020 Added JavaScript validation capabilities for image upload, also added UploadAdapter.
         - Janice Lu: 11/21/2020 Added server side validation capabilities in the case that JavaScript validation fails.
+        - Janice Lu: 11/21/2020 Fought with the PHP file manipulation for FOREVER. but I got the file upload and rename to work properly!
 6. Output Validation as XHTML5 (Janice Lu)
     - use WAVE browser addon and https://validator.w3.org/ to check for accessibility
 7. Title currently says "Movie Reviews" (Chris Douglas)
