@@ -13,7 +13,7 @@ class LandingView extends View
     ?>
       <form name="upload" action="./index.php?c=addImage" method="post" enctype="multipart/form-data">
         <label for="filename">New Image: <input type="text" id="filename" onclick="browse()"/></label>
-        <label for="filePath"><input id="filelocation" type="file" value="iamgeToUpload" name="imageToUpload" onchange="update()"></label>
+        <label for="filePath"><input style="display: none;" id="filelocation" type="file" value="imageToUpload" name="imageToUpload" onchange="update()"></label>
         <label for="submitImage"><input type="submit" value="Upload" name="submit" onclick="validateFile()"></label>
       </form><br>
       <div class="puzzle" id="puzzle">
@@ -36,7 +36,7 @@ class LandingView extends View
         }
 
         function validateFile(){
-          var input = document.getElementById("filePath");
+          var input = document.getElementById("filelocation");
           var uploadFilePath = input.value;
           var fileExt = uploadFilePath.split('.').pop();
           if(!fileExt.match(/(png|jpg|gif)$/))
