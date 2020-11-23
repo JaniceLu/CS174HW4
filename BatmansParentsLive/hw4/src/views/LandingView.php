@@ -11,10 +11,11 @@ class LandingView extends View
     $header = new header();
     $header->render();
     ?>
-      <form class="addimage" action="./index.php?c=addImage" method="post" enctype="multipart/form-data">
-        <label for="imageToUpload">New Image: <input type="text" id="imageToUpload"></label>
-        <label for="submitImage"><input type="submit" value="Upload" name="submit"></label>
-      </form> <br>
+      <form name="upload" action="./index.php?c=addImage" method="post" enctype="multipart/form-data">
+        <label for="filename">New Image: <input type="text" id="filename" onclick="browse()"/></label>
+        <label for="filePath"><input style="display: none;" id="filelocation" type="file" value="imageToUpload" name="imageToUpload" onchange="update()"></label>
+        <label for="submitImage"><input type="submit" value="Upload" name="submit" onclick="validateFile()"></label>
+      </form><br>
       <div class="puzzle" id="puzzle">
         <div class='puzzle puzzleLoc0' id='0' onclick="swap(this.id)"></div>
         <div class='puzzle puzzleLoc1' id='1' onclick="swap(this.id)"></div>
@@ -27,6 +28,33 @@ class LandingView extends View
         <div class='puzzle puzzleLoc8' id='8' onclick="swap(this.id)"></div>
       </div>
       <script type="text/javascript">
+
+        function update(){
+          var uploadFile = document.getElementById("filename");
+          var input = document.getElementById("filelocation");
+          uploadFile.value = input.value;
+        }
+
+        function validateFile(){
+          var input = document.getElementById("filelocation");
+          var uploadFilePath = input.value;
+          var fileExt = uploadFilePath.split('.').pop();
+          if(!fileExt.match(/(png|jpg|gif)$/))
+          {
+              alert("Not an image. Upload failed.");
+          }
+          var uploadFileSize = input.files[0].size / 1024 / 1204;
+          if(uploadFileSize > 2)
+          {
+            alert('File size is larger than 2 MB. Upload Failed.');
+          }
+        }
+
+        function browse(){
+          var fileInput = document.getElementById("filelocation");
+          fileInput.click();
+        }
+
         function swap(docID){
             //see if puzzle is solved
             var order = "012345678";
