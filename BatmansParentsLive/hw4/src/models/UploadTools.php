@@ -65,7 +65,8 @@ class UploadTools
     $source = imagecreatefromjpeg($newImageName);
     $destination = imagecreatetruecolor($dimensions, $dimensions);
     if(imagecopyresized($destination, $source, 0, 0, 0, 0, $dimensions, $dimensions, $origWidth, $origHeight)) {
-      echo "changed";
+      //echo "changed";
+      imagejpeg($destination, $newImageName);
       return 1;
     }
     else {

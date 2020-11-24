@@ -53,3 +53,10 @@ Project Issues:
         - Chris Douglas: 11/15/2020 So I've been thinking about how we can write the placement of the tiles to the active_image.txt file. My idea is just to store it as a string like "567148032". when we lock the file to swap i and j we can just read in a single string and iterate over the characters
 10. Change how we get each tile (Chris Douglas)
     - change what tile is returned by a call to ./index.php?c=index&i=[TILE HERE]. 0 would return the actual first tile. Now it returns the scrambled tile.
+11. Make an ajax request to get the order (Chris Douglas)
+    - put it in the landingView.php file
+12. Make the ajax requests to swap things (Chris Douglas)
+    - also put this in the landingView.php file
+13. make ajax request to check if puzzle is solved
+    - also put this in the landingView.php file
+      - Chris Douglas (11/23/2020): Chose to remove this and check the class labels of each div tag instead. one less request to the server and checking the order with the current implementation makes it so we cant complete the functional requirement of having the server detect and auto reshuffle the puzzle on completion
