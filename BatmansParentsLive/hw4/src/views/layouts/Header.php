@@ -4,7 +4,6 @@ namespace BatmansParentsLive\hw4\Layouts;
 class Header
 {
   public function render(){
-
     ?><!DOCTYPE html>
             <html lang="en">
               <head>

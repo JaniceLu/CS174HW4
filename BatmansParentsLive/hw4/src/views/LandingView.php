@@ -11,10 +11,10 @@ class LandingView extends View
     $header = new header();
     $header->render();
     ?>
-      <form name="upload" action="./index.php?c=addImage" method="post" enctype="multipart/form-data">
+      <form name="upload" id="uploadForm" action="./index.php?c=addImage" method="post" enctype="multipart/form-data">
         <label for="filename">New Image: <input type="text" id="filename" onclick="browse()"/></label>
-        <label for="filePath"><input style="display: none;" id="filelocation" type="file" value="imageToUpload" name="imageToUpload" onchange="update()"></label>
-        <label for="submitImage"><input type="submit" value="Upload" name="submit" onclick="validateFile()"></label>
+        <input id="filelocation" type="file" name="imageToUpload" onchange="update()">
+        <input type="submit" value="Upload" name="submit" onclick="validateFile()">
       </form><br>
       <div class="puzzle" id="puzzle">
         <div class='puzzle puzzleLoc0' id='0' onclick="swap(this.id)"></div>
@@ -146,6 +146,7 @@ class LandingView extends View
         }
         window.onload = puzzleify();
       </script>
+    </main>
     <?php
   }
 

@@ -103,3 +103,6 @@ div.piece7{
 div.piece8{
     background-position: -240px -240px;
 }
+input#filelocation{
+  display: none;
+}

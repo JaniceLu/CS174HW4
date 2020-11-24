@@ -49,6 +49,7 @@ Project Issues:
         - Janice Lu: 11/21/2020 Fought with the PHP file manipulation for FOREVER. but I got the file upload and rename to work properly!
 6. Output Validation as XHTML5 (Janice Lu)
     - use WAVE browser addon and https://validator.w3.org/ to check for accessibility
+        - Janice Lu: 11/23/2020 Checked page via validator w3 website. Everything looks good!
 7. Title currently says "Movie Reviews" (Chris Douglas)
     - changing it to Community Jigsaw in header.php
 8. Change namespaces to comply with the format in requirement 3.
