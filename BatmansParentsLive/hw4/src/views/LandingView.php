@@ -48,6 +48,7 @@ class LandingView extends View
           {
             alert('File size is larger than 2 MB. Upload Failed.');
           }
+          //slocation.reload();
         }
 
         function browse(){
@@ -57,18 +58,31 @@ class LandingView extends View
 
         function swap(docID){
             //see if puzzle is solved
-            var order = "012345678";
-            request = new XMLHttpRequest();
+            var order = "";
+            /*request = new XMLHttpRequest();
             request.onreadystatechange = function()
             {
               order = request.responseText;
             }
             request.open("GET", "./index.php?c=order", false);
-            request.send();
+            request.send();//this works but we cant do it because it wont allow for us to complete a functional requirement*/
+            for(i=0; i < 9; i++)//this is stupid but it's what we need to do.
+            {
+              var lst = document.getElementById(i.toString()).classList
+              for(j = 0; j < lst.length; j++)
+              {
+                if (lst[j].includes("piece"))
+                {
+                  order = order + lst[j].replace('piece', '');
+                }
+              }
+            }
+
             if (order == "012345678")
             {
               alert("congrats! Now do it again");
-              puzzleify();
+              location.reload();
+              //puzzleify();
             }
             // check to see if any tiles have the outline class
             var i;

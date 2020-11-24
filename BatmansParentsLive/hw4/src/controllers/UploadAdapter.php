@@ -1,7 +1,7 @@
 <?php
 
 namespace BatmansParentsLive\hw4\Controllers;
-use BatmansParentsLive\hw4\Views\LandingView as LandingView;
+use BatmansParentsLive\hw4\Views\UploadView as UploadView;
 use BatmansParentsLive\hw4\Models\UploadTools as UploadTools;
 use BatmansParentsLive\hw4\Models\ImageTools as ImageTools;
 use Monolog\Logger;
@@ -48,8 +48,7 @@ class UploadAdapter extends Adapter
           $this->logger->notice("Attempt to upload failed. Form input did not meet upload requirements.");
         }
       }
-      $this->model= new ImageTools();
-      $this->view = new LandingView($this->model->getOrder());
+      $this->model->shuffleOrder();
       $this->view->render();
     }
 
@@ -59,5 +58,7 @@ class UploadAdapter extends Adapter
       $this->logger->pushHandler(new StreamHandler('./hw4/src/resources/jigsaw.log', Logger::DEBUG));
       $this->logger->pushHandler(new FirePHPHandler());
       $this->uploadModel = new UploadTools();
+      $this->model= new ImageTools();
+      $this->view = new UploadView();
     }
 }

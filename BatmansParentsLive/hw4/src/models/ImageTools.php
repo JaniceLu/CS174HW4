@@ -7,24 +7,8 @@ class ImageTools{
   {
       /* Attempt to open */
       $im = imagecreatefromjpeg("./hw4/src/resources/active_image.jpg");
-      /*$fp = fopen("./hw4/src/resources/active_image.txt", 'r+');
-      while (!flock($fp, LOCK_SH)) //could result in a deadlock maybe???
-      {
-        //wait until we can acquire the lock
-        continue;
-      }
-
-      $order = fgets($fp);
-      $index = substr($order, $i, 1);
-      $i = intval($index);
-      flock($fp, LOCK_UN);*/
-
-      //compute x and y using i.
-      //x is just 120 * i %3
-      //y is just the integer division of i and 3..... i'm hella tired and it took me waaaay too long to figure that out :(
-      // imagecrop($im, ['x'=> 120*($i%3), 'y' => 120*intdiv($i,3), 'width' => 120, 'height' => 120])
       return imagejpeg($im);
-      //return imagejpeg(imagecrop($im, ['x'=> 120*($i%3), 'y' => 120*intdiv($i,3), 'width' => 120, 'height' => 120]));
+
   }
 
   function swap($i, $j)
@@ -36,14 +20,15 @@ class ImageTools{
       return;
     }
     $fp = fopen("./hw4/src/resources/active_image.txt", 'r+');
-    while (!flock($fp, LOCK_EX)) //could result in a deadlock maybe???
+    while (!flock($fp, LOCK_EX))
     {
       //wait until we can acquire the lock
       continue;
     }
 
     //read file into array
-    #$fileText = fread($fp, filesize('./src/resources/active_image.txt'));
+    //can we write this better: yes
+    //are we going to write this better: no. i'm lazy
     $arr = [];
     for($f = 0; $f < 9; $f++)
     {
@@ -54,7 +39,6 @@ class ImageTools{
     $arr[$i] = $arr[$j];
     $arr[$j] = $k;
 
-    //message all connected players???
 
     //save array to file
     $writeMe = '';
@@ -88,6 +72,33 @@ class ImageTools{
       $arr[$f] = fgetc($fp);
     }
     flock($fp, LOCK_UN);
+    if(implode($arr) == '012345678')
+    {
+      $this->shuffleOrder();
+    }
     return $arr;
+  }
+
+  function shuffleOrder(){
+    $fp = fopen("./hw4/src/resources/active_image.txt", 'r+');
+    while (!flock($fp, LOCK_EX)) //could result in a deadlock maybe???
+    {
+      //wait until we can acquire the lock
+      continue;
+    }
+    $order = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
+    for($i = 0; $i <= 7; $i++)
+    {
+      $j = rand($i, 8);
+      //swap i and j
+      $hold = $order[$j];
+      $order[$j] = $order[$i];
+      $order[$i] = $hold;
+    }
+    $writeMe = implode($order);
+    fseek($fp, 0);
+    fwrite($fp, $writeMe);
+    //unlock files
+    flock($fp, LOCK_UN);
   }
 }
